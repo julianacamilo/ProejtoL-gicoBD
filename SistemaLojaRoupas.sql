@@ -44,7 +44,7 @@ DROP TABLE IF EXISTS estoquess;
 create table estoquess( 
 id_estoque int primary key auto_increment,
 nome_estoque varchar(20),
-endereço_estoque varchar(30)
+endereco_estoque varchar(30)
 
 );
 
