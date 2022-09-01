@@ -2,6 +2,9 @@
 
 
 > Replicar a modelagem do projeto lógico de banco de dados para o cenário E-commerce ( projeto feito no repósitorio E-commerce)
+
+> Criar um projeto de banco de dados do zero ( Sistema de loja de roupas)
+
 > Com as seguintes cláusulas: 
 * Recuperações simples com SELECT Statement
 * Filtros com WHERE Statement
