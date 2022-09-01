@@ -1,0 +1,62 @@
+CREATE TABLE `Funcionario` (
+  `PK` id_funcionario,
+  `` nome,
+  `` cpf,
+  `` cargo
+);
+
+CREATE TABLE `Loja` (
+  `PK` id_loja,
+  `` nome,
+  `` cnpj,
+  `` endereco,
+  `` contato
+);
+
+CREATE TABLE `Estoque` (
+  `PK` id_estoque,
+  `` nome_estoque,
+  `` endereco_estq
+);
+
+CREATE TABLE `Cliente` (
+  `id_cliente` <type>,
+  `nome_cliente` <type>,
+  `cpf` <type>,
+  `genero` <type>,
+  `contato` <type>,
+  `endereco` <type>,
+  PRIMARY KEY (`id_cliente`)
+);
+
+CREATE TABLE `Pedido` (
+  `id_pedido` <type>,
+  `id_cliente` <type>,
+  `id_produto` <type>,
+  PRIMARY KEY (`id_pedido`),
+  FOREIGN KEY (`id_cliente`) REFERENCES `Cliente`(`id_cliente`)
+);
+
+CREATE TABLE `Produto` (
+  `PK` id_produto,
+  `` nome_produto,
+  `` tipo_produto,
+  `` marca,
+  `` valor,
+  `` quantidade,
+  `FK` id_estoque,
+  FOREIGN KEY (`FK`) REFERENCES `Estoque`(`PK`),
+  FOREIGN KEY (`PK`) REFERENCES `Pedido`(`id_produto`),
+  FOREIGN KEY (`PK`) REFERENCES `Pedido`(`id_produto`)
+);
+
+CREATE TABLE `Pagamento` (
+  `id_pagamento` <type>,
+  `tipo_pagamento` <type>,
+  `id_cliente` <type>,
+  `id_pedido` <type>,
+  PRIMARY KEY (`id_pagamento`),
+  FOREIGN KEY (`id_cliente`) REFERENCES `Cliente`(`id_cliente`),
+  FOREIGN KEY (`id_pedido`) REFERENCES `Pedido`(`id_pedido`)
+);
+
